@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/createMember.css}"/>
+</head>
+
+<body>
+<form action="/member/new" method="post">
+    <div>
+        <div class="container">
+            <h2>회원가입을 위해<br>정보를 입력해주세요.</h2>
+
+            <label for="email">* 이메일<br>
+                <input type="text" id="email" name="email"><br><br>
+            </label>
+            <label for="nickname">* 이름<br>
+                <input type="text" id="nickname" name ="nickname"><br><br>
+            </label>
+            <label for="password">* 비밀번호<br>
+                <input type="text" id="password" name ="password"><br><br>
+            </label>
+            <button type="submit">가입하기</button>
+        </div>
+    </div>
+</form>
+</body>
+
+</html>

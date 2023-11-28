@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" th:href="@{/css/home.css}"/>
+  <title>Title</title>
+</head>
+<body>
+<div class="wrapper">
+  <div class="container">
+    <div class="sign-up-container">
+
+      <form>
+        <h1>Create Account</h1>
+        <div class="social-links">
+          <div>
+            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+          </div>
+          <div>
+            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+          </div>
+          <div>
+            <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <span>or use your email for registration</span>
+        <input type="text" placeholder="Name">
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <button class="form_btn">Sign Up</button>
+      </form>
+    </div>
+
+    <div class="sign-in-container">
+      <form action="/member/login" method="post">
+        <h1>Sign In</h1>
+        <div class="social-links">
+          <div>
+            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+          </div>
+          <div>
+            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+          </div>
+          <div>
+            <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+          </div>
+        </div>
+        <span>직접 로그인</span>
+        <input type="email" placeholder="Email">
+        <input type="password" placeholder="Password">
+        <button class="form_btn", onclick="location.href='/member/login'">로그인</button>
+      </form>
+    </div>
+
+    <div class="overlay-container">
+      <div class="overlay-left">
+        <h1>Welcome Back</h1>
+        <p>To keep connected with us please login with your personal info</p>
+        <button id="signIn" class="overlay_btn">Sign In</button>
+      </div>
+      <div class="overlay-right">
+        <h1>회원 가입</h1>
+        <p>기니긴 취업을 끝낼 새로운 솔루션 '취뿌'와 함께하기</p>
+        <button id="signUp" class="overlay_btn" onclick="location.href='/member/new'">회원 가입</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
