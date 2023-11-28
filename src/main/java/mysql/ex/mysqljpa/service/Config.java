@@ -30,4 +30,6 @@ public class Config {
     public MemberRepository memberRepository(){
         return new JpaMemberRepository(em);
     }
+
+
 }

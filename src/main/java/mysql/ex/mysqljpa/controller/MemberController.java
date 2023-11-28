@@ -1,22 +1,27 @@
 package mysql.ex.mysqljpa.controller;
 
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import mysql.ex.mysqljpa.domain.Member;
 import mysql.ex.mysqljpa.repository.MemberRepository;
+import mysql.ex.mysqljpa.service.KakaoService;
 import mysql.ex.mysqljpa.service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
 public class MemberController {
     private final MemberService memberService;
+
+    @Autowired
+    private KakaoService kakaoService ;
+
 
     @Autowired
     public MemberController(MemberService memberService) {
@@ -63,6 +68,32 @@ public class MemberController {
             model.addAttribute("loginError", "로그인 정보를 확인해주세요");
             return "";
         }
+    }
+
+    @GetMapping("/member/kakaologin")
+    public String Kakaologin(){
+        StringBuffer url = new StringBuffer();
+        url.append("https://kauth.kakao.com/oauth/authorize?");
+        url.append("client_id=" + "3c093974282dc7befef6e639a5c59962");
+        url.append("&redirect_uri=http://localhost:8080/kakao/callback");
+        url.append("&response_type=code");
+
+        return "redirect:"+url.toString();
+    }
+
+    @RequestMapping(value = "/kakao")
+    public String kakaoLogin(@RequestParam("code") String code,Model model ,HttpSession session) throws Exception {
+        /*
+        //code로 토큰 받음
+        String access_token = kakaoService.getToken(code);
+
+        //토큰으로 사용자 정보 담은 list 가져오기
+        ArrayList<Object> list = kakaoService.getUserInfo(access_token);
+
+        //list 모델에 담아 view로 넘김
+        model.addAttribute("list", list);
+        */
+        return "userInfo";
     }
 
 }
