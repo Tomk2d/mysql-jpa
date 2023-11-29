@@ -17,4 +17,10 @@ public class Kakaouser {
     private String email;
     private String nickname;
     private String password;
+
+    public Kakaouser(String email, String nickname, String password) {
+        this.email = email;
+        this.nickname = nickname;
+        this.password = password;
+    }
 }

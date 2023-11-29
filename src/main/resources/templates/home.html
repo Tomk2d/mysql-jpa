@@ -9,8 +9,7 @@
 <div class="wrapper">
   <div class="container">
     <div class="sign-up-container">
-
-      <form>
+      <form th:action="@{/member/register}" method="post">
         <h1>Create Account</h1>
         <div class="social-links">
           <div>
@@ -31,8 +30,9 @@
       </form>
     </div>
 
+    <!-- 수정된 로그인 폼 -->
     <div class="sign-in-container">
-      <form>
+      <form action="/member/login" method="post">
         <h1>Sign In</h1>
         <div class="social-links">
           <div>
@@ -46,9 +46,9 @@
           </div>
         </div>
         <span>직접 로그인</span>
-        <input type="email" placeholder="Email">
-        <input type="password" placeholder="Password">
-        <button class="form_btn", onclick="location.href='/member/login'">로그인</button>
+        <input type="email" placeholder="Email" name="email">
+        <input type="password" placeholder="Password" name="password">
+        <button type="submit" class="form_btn">로그인</button>
       </form>
     </div>
 

@@ -102,19 +102,14 @@ public class KakaoServicelmpl implements KakaoService {
         System.out.println("----------properties"+properties);
         System.out.println("----------kakao_account"+kakao_account);
 
-        String thumbnail_image = properties.getAsJsonObject().get("thumbnail_image").getAsString();
-        String ninkname = properties.getAsJsonObject().get("nickname").getAsString();
+        String nickname = properties.getAsJsonObject().get("nickname").getAsString();
         String email = kakao_account.getAsJsonObject().get("email").getAsString();
-        String gender = kakao_account.getAsJsonObject().get("gender").getAsString();
-        String birthday = kakao_account.getAsJsonObject().get("birthday").getAsString();
 
-        list.add(thumbnail_image);
-        list.add(ninkname);
         list.add(email);
-        list.add(birthday);
+        list.add(nickname);
 
         //DB 저장
-        Kakaouser kakaouser = new Kakaouser(ninkname,"1234",ninkname,email);
+        Kakaouser kakaouser = new Kakaouser(email,nickname,"1234");
         kakaoRepository.save(kakaouser);
 
         return list;

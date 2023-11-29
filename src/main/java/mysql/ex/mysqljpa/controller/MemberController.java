@@ -66,7 +66,7 @@ public class MemberController {
         } catch (LoginFailureException e) {
             // 로그인 실패 시, 오류 메시지를 설정하고 로그인 페이지로 다시 이동
             model.addAttribute("loginError", "로그인 정보를 확인해주세요");
-            return "";
+            return "userInfo";
         }
     }
 
@@ -95,5 +95,4 @@ public class MemberController {
         */
         return "userInfo";
     }
-
 }
