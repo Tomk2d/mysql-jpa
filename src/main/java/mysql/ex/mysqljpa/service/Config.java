@@ -2,6 +2,7 @@ package mysql.ex.mysqljpa.service;
 
 import jakarta.persistence.EntityManager;
 import mysql.ex.mysqljpa.repository.JpaMemberRepository;
+import mysql.ex.mysqljpa.repository.KakaoRepository;
 import mysql.ex.mysqljpa.repository.MemberRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -30,6 +31,4 @@ public class Config {
     public MemberRepository memberRepository(){
         return new JpaMemberRepository(em);
     }
-
-
 }
