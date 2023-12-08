@@ -64,26 +64,19 @@ button {
   box-shadow: inset 1px 1px 2px #babebc, inset -1px -1px 2px #fff;
 }
 .overlay_btn {
-  background-color: #ff4b2b;
+  background-color: #0068FF;
   color: #fff;
-  box-shadow: -5px -5px 10px #ff6b3f, 5px 5px 8px #bf4b2b;
+  box-shadow: -2px -2px 4px rgba(0, 0, 255, 0.3), 5px 5px 8px rgba(0, 0, 255, 0.3); /* 왼쪽 위와 오른쪽 아래에 그림자 추가 */
 }
-.sign-in-container {
+
+.sign-in-container, .sign-up-container {
   position: absolute;
   left: 0;
   width: 50%;
   height: 100%;
   transition: all 0.5s;
 }
-.sign-up-container {
-  position: absolute;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  opacity: 0;
-  transition: all 0.5s;
-}
-.overlay-left {
+.overlay-left, .overlay-right {
   display: flex;
   flex-direction: column;
   padding: 0 50px;
@@ -93,22 +86,7 @@ button {
   right: 0;
   width: 50%;
   height: 100%;
-  opacity: 0;
-  background-color: #ff4b2b;
-  color: #fff;
-  transition: all 0.5s;
-}
-.overlay-right {
-  display: flex;
-  flex-direction: column;
-  padding: 0 50px;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  right: 0;
-  width: 50%;
-  height: 100%;
-  background-color: #ff4b2b;
+  background-color: #0068FF;
   color: #fff;
   transition: all 0.5s;
 }
@@ -138,7 +116,6 @@ form h1 {
   margin: 0;
   color: #000;
 }
-
 p {
   font-size: 16px;
   font-weight: bold;
@@ -151,20 +128,38 @@ span {
   letter-spacing: 0.5px;
   margin-bottom: 10px;
 }
-.social-links div {
-  width: 40px;
-  height: 40px;
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 5px;
-  border-radius: 50%;
-  box-shadow: -5px -5px 10px #fff, 5px 5px 8px #babebc;
-  cursor: pointer;
-}
-.social-links a {
+
+span.sns-login {
+  font-size: 12px;
   color: #000;
+  letter-spacing: 0.5px;
+  margin-top: 5px; /* 위쪽 여백을 작게 조절합니다. */
+  margin-bottom: 0; /* 아래쪽 여백을 없앱니다. */
+  position: absolute; /* 절대 위치로 설정합니다. */
+  top: -20px; /* 위쪽으로 위치시켜버립니다. */
 }
-.social-links div:active {
-  box-shadow: inset 1px 1px 2px #babebc, inset -1px -1px 2px #fff;
+
+
+/* 카카오톡 로그인 버튼 스타일 */
+.kakao-login-btn {
+  background-color: #FEE500; /* 카카오톡 색상 */
+  color: black;
+  border: none;
+  padding: 15px 45px; /* 패딩 수정 */
+  margin: 14px; /* 마진 수정 */
+  border-radius: 20px; /* 모서리 둥글게 */
+  box-shadow: -5px -5px 10px #fff, 5px 5px 8px #babebc; /* 그림자 스타일 수정 */
+  font-size: 12px; /* 글씨 크기 수정 */
+  font-weight: bold; /* 글씨 굵기 수정 */
+  letter-spacing: 1px; /* 자간 수정 */
+  text-transform: uppercase; /* 텍스트 변형 */
+  cursor: pointer;
+  transition: transform 80ms ease-in;
 }
+.kakao-login-btn:active {
+  box-shadow: inset 1px 1px 2px #babebc, inset -1px -1px 2px #fff; /* 클릭 시 그림자 변형 */
+}
+
+
+
+

@@ -62,7 +62,7 @@ public class MemberController {
             memberService.login(member);
 
             // 로그인 성공 시, 홈페이지나 대시보드 등으로 리디렉션
-            return "member/createMember";
+            return "page/mainpage";
         } catch (LoginFailureException e) {
             // 로그인 실패 시, 오류 메시지를 설정하고 로그인 페이지로 다시 이동
             model.addAttribute("loginError", "로그인 정보를 확인해주세요");
@@ -83,7 +83,7 @@ public class MemberController {
 
     @RequestMapping(value = "/kakao")
     public String kakaoLogin(@RequestParam("code") String code,Model model ,HttpSession session) throws Exception {
-        /*
+
         //code로 토큰 받음
         String access_token = kakaoService.getToken(code);
 
@@ -92,7 +92,6 @@ public class MemberController {
 
         //list 모델에 담아 view로 넘김
         model.addAttribute("list", list);
-        */
         return "userInfo";
     }
 }

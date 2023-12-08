@@ -16,12 +16,6 @@ div {
     border: 1px solid #AACDFF;
     box-shadow: 7px 7px 39px rgba(0, 104, 255, 0.25);
     border-radius: 20px;
-
-    /* 이것의 의미는 타겟팅된 영역에 대해
-    지정된 만큼 움직여주는 거라고 한다. */
-    /* justify-content: space-evenly;
-    align-content: column; */
-
     margin: 0px;
     padding: 100px;
     box-sizing: border-box;

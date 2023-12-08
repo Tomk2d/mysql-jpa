@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/mainpage.css}"/>
+</head>
+<body>
+<main class="main flow">
+    <h1 class="main__heading" style="font-weight: normal;">취업 도우미 <span style="font-weight: bold;">취뿌</span></h1>
+    <div class="main__cards cards">
+        <div class="cards__inner">
+            <div class="cards__card card">
+                <h2 class="card__heading">AI 가 자기소개서를 작성해드려요!</h2>
+                <p class="card__price">자기소개서 Bot</p>
+                <span></span>
+                <ul role="list" class="card__bullets flow">
+                    <li>관심 기업, 인재상, 본인 경험</li>
+                    <li>보다 높은 퀄리티를 위하여 경험사항을 먼저 작성해주세요</li>
+                </ul>
+                <form method="post" action="/page/jasosul">
+                    <button type="submit" formaction="/page/jasosul" class="card__cta cta" style="width: 270px; height: 50px; font-size: 16px; padding: 15px 0;">시작하기</button>
+                </form>
+            </div>
+
+            <div class="cards__card card">
+                <h2 class="card__heading">기업에 대한 최신 기사를 요약해드려요!</h2>
+                <p class="card__price">최신 이슈 Bot</p>
+                <span></span>
+                <ul role="list" class="card__bullets flow">
+                    <li>지원동기 문항에 도움이 되요</li>
+                    <li>면접시에 관심사를 표현해보세요</li>
+                    <li>관심 기업을 등록하면 기사를 드려요</li>
+                </ul>
+                <form method="post" action="/page/news">
+                    <button type="submit" formaction="/page/news" class="card__cta cta" style="width: 270px; height: 50px; font-size: 16px; padding: 15px 0;">시작하기</button>
+                </form>
+            </div>
+
+            <div class="cards__card card">
+                <h2 class="card__heading">나의 경험을 자기소개서에 넣어요!</h2>
+                <p class="card__price">나의 자기소개서</p>
+                <span></span>
+                <ul role="list" class="card__bullets flow">
+                    <li>자기소개서에 필요한 경험정리</li>
+                    <li>나의 자기소개서 보기</li>
+                    <li>관심 기업 일정 정리</li>
+                </ul>
+                <form method="post" action="/page/MyResume">
+                    <button type="submit" formaction="/page/MyResume" class="card__cta cta" style="width: 270px; height: 50px; font-size: 16px; padding: 15px 0;">시작하기</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="overlay cards__inner"></div>
+    </div>
+</main>
+
+</body>
+</html>
