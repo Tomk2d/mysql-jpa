@@ -152,6 +152,15 @@ html, body {
     overflow-wrap: break-word; /* 긴 단어는 줄바꿈 */
 }
 
+.results a {
+    color: white !important; /* 링크 색상을 흰색으로 설정 */
+}
+
+.results a:hover {
+    color: #CCCCCC !important; /* 마우스 오버 시 색상 변경 */
+}
+
+
 
 @keyframes glow {
     0% {

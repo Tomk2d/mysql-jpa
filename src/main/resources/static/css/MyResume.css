@@ -1,0 +1,54 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.card {
+    background-color: #333;
+    border-radius: 10px;
+    padding: 15px;
+    width: 300px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.card h2 {
+    color: #fff;
+}
+
+.card p {
+    color: #bbb;
+}
+
+button {
+    background-color: #555;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #777;
+}
+.card-link {
+    text-decoration: none; /* 링크 밑줄 제거 */
+    color: inherit; /* 부모 요소로부터 글자색 상속 */
+}
+
+.card-link:hover .card {
+    background-color: #444; /* 마우스 오버시 카드 배경색 변경 */
+}

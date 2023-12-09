@@ -24,12 +24,12 @@ public class NewsController {
                 Document doc = Jsoup.connect(url).get();
                 Elements links = doc.select(".news_tit");
 
-                result.append("\n\n").append(pageNum).append(" 페이지의 기사 ===================================================================\n\n");
+                result.append("\n\n").append(pageNum).append(" 페이지의 기사 \n\n");
 
                 for (Element link : links) {
                     String title = link.text();
                     String articleUrl = link.attr("href");
-                    result.append(title).append(" - ").append(articleUrl).append("\n\n");
+                    result.append("<a href='").append(articleUrl).append("' target='_blank'>").append(title).append("</a>").append("<br><br>");
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -40,3 +40,4 @@ public class NewsController {
         return "/page/news"; // Thymeleaf 템플릿 뷰 이름
     }
 }
+
