@@ -53,13 +53,15 @@ public class MemberController {
 
 
     @PostMapping("/member/login")
-    public String login(MemberForm form, Model model, RedirectAttributes redirectAttributes) {
+    public String login(MemberForm form, Model model, RedirectAttributes redirectAttributes, HttpSession session) {
         try {
             Member member = new Member();
             member.setEmail(form.getEmail());
             member.setPassword(form.getPassword());
 
             memberService.login(member);
+
+            session.setAttribute("email",member.getEmail());
 
             // 로그인 성공 시, 홈페이지나 대시보드 등으로 리디렉션
             return "page/mainpage";

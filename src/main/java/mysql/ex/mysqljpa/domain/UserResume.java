@@ -14,15 +14,23 @@ public class UserResume {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "member_id")
-    private Member member;
+    @NonNull
+    private String email;
     @NonNull
     private String company;
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     @NonNull
     private String job;
     @NonNull
-    private String Resume;
+    private String resume;
 
     public String getJob() {
         return job;
@@ -42,14 +50,6 @@ public class UserResume {
         this.id = id;
     }
 
-    public Member getMember() {
-        return member;
-    }
-
-    public void setMember(Member member) {
-        this.member = member;
-    }
-
     public String getCompany() {
         return company;
     }
@@ -59,13 +59,10 @@ public class UserResume {
     }
 
     public String getResume() {
-        return Resume;
+        return resume;
     }
 
     public void setResume(String resume) {
-        Resume = resume;
+        this.resume = resume;
     }
-
-
-
 }

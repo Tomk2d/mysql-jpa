@@ -14,19 +14,22 @@ body {
     padding: 20px;
 }
 
-.card {
+.card-link a {
+    text-decoration: none; /* 링크 밑줄 제거 */
+    color: inherit; /* 부모 요소로부터 글자색 상속 */
     background-color: #333;
     border-radius: 10px;
     padding: 15px;
     width: 300px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    display: block; /* 링크를 블록 레벨 요소로 만들기 */
 }
 
-.card h2 {
+.card-link a h2 {
     color: #fff;
 }
 
-.card p {
+.card-link a p {
     color: #bbb;
 }
 
@@ -44,11 +47,7 @@ button {
 button:hover {
     background-color: #777;
 }
-.card-link {
-    text-decoration: none; /* 링크 밑줄 제거 */
-    color: inherit; /* 부모 요소로부터 글자색 상속 */
-}
 
-.card-link:hover .card {
-    background-color: #444; /* 마우스 오버시 카드 배경색 변경 */
+.card-link a:hover {
+    background-color: #444; /* 마우스 오버시 링크 배경색 변경 */
 }

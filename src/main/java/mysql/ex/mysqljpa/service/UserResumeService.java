@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserResumeService {
@@ -20,5 +21,16 @@ public class UserResumeService {
 
     public List<UserResume> getAllResume(){
         return userResumeRepository.findAll();
+    }
+    public UserResume findById(Long id) {
+        Optional<UserResume> userResume = userResumeRepository.findById(id);
+        return userResume.orElse(null);
+    }
+    public Long join(UserResume userResume){
+        userResumeRepository.save(userResume);
+        return userResume.getId();
+    }
+    public List<UserResume> getResumesByEmail(String email) {
+        return userResumeRepository.findByEmail(email);
     }
 }
