@@ -9,15 +9,15 @@
 
 <div class="card-container" id="cardContainer">
     <!-- Thymeleaf를 사용하여 UserResume 객체 목록을 순회하며 카드를 생성 -->
-    <div th:each="resume : ${resume}" class="card-link">
+    <div th:each="resume : ${resumes}" class="card-link">
         <!-- 이메일을 기반으로 링크 생성 -->
-        <a th:href="@{/page/MyResumeGroup(email=${resume.email})}" class="card">
+        <a th:href="@{/page/MyResumeGroup(id=${resume.id})}" class="card">
             <h2 th:text="${resume.company}">기업 이름</h2>
             <p th:text="${resume.job}">자기소개서 내용</p>
         </a>
     </div>
 </div>
-<form method="post" action="/page/MyResumeGroup">
+<form method="post" action="/page/newResume">
     <button type="submit">자기소개서 쓰기</button>
 </form>
 

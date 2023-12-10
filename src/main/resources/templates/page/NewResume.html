@@ -5,24 +5,26 @@
     <link rel="stylesheet" type="text/css" th:href="@{/css/MyResumeGroup.css}"/>
 </head>
 <body>
-<form action="/resume/fix" method="post">
-                <!--db 수정을 위한 id 값을 히든 스테이트로 저장-->
-    <input type="hidden" id="id" name="id" th:value="${resume.id}">
+<form action="/resume/save" method="post">
     <div class="container" id="resumeContainer">
+        <div class="form-group">
+            <label for="email">이메일</label>
+            <input type="email" id="email" name="email">
+        </div>
 
         <div class="form-group">
             <label for="company">지원 기업명</label>
-            <input type="text" id="company" name="company" th:value="${resume.company}">
+            <input type="text" id="company" name="company">
         </div>
 
         <div class="form-group">
             <label for="job">직무</label>
-            <input type="text" id="job" name="job" th:value="${resume.job}">
+            <input type="text" id="job" name="job">
         </div>
 
         <div class="form-group">
             <label for="resume">자기소개서</label>
-            <textarea id="resume" name="resume" th:text="${resume.resume}" rows="10" oninput="countCharacters()"></textarea>
+            <textarea id="resume" name="resume" rows="10" oninput="countCharacters()"></textarea>
             <div id="characterCount" class="character-count">글자수: 0</div>
         </div>
 

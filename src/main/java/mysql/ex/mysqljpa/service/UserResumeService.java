@@ -33,4 +33,11 @@ public class UserResumeService {
     public List<UserResume> getResumesByEmail(String email) {
         return userResumeRepository.findByEmail(email);
     }
+
+    public UserResume getResumesById(Long id){
+        return userResumeRepository.findById(id).orElse(null);
+    }
+    public void update(UserResume userResume) {
+        userResumeRepository.save(userResume);
+    }
 }

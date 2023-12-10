@@ -1,7 +1,5 @@
 package mysql.ex.mysqljpa.controller;
 
-import mysql.ex.mysqljpa.domain.Member;
-
 public class UserResumeForm {
     private Long id;
     private String email;
