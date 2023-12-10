@@ -49,4 +49,9 @@ public class MainPageController {
     public String createNewResume() {
         return "/page/NewResume"; // 새 자기소개서 작성 페이지의 뷰 이름
     }
+
+    @PostMapping("/page/goMain")
+    public String goMain(){
+        return "/page/mainpage";
+    }
 }
