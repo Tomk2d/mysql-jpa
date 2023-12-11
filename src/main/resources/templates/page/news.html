@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/news.css}"/>
+
+  <title>Title</title>
+</head>
+<body>
+<section class="webdesigntuts-workshop">
+  <form action="/search" method="get">
+    <input type="text" name="keyword" placeholder="검색할 키워드를 적어주세요">
+    <button type="submit">Search</button>
+  </form>
+    <div class="results" th:utext="${results}"></div>
+    <form method="post" action="/page/goMain">
+        <button type="submit">홈으로</button>
+    </form>
+</section>
+</body>
+</html>

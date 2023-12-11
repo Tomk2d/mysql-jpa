@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/MyResume.css}"/>
+</head>
+<body>
+<h1>나의 자기소개서</h1>
+
+<div class="card-container" id="cardContainer">
+    <!-- Thymeleaf를 사용하여 UserResume 객체 목록을 순회하며 카드를 생성 -->
+    <div th:each="resume : ${resumes}" class="card-link">
+        <!-- 이메일을 기반으로 링크 생성 -->
+        <a th:href="@{/page/MyResumeGroup(id=${resume.id})}" class="card">
+            <h2 th:text="${resume.company}">기업 이름</h2>
+            <p th:text="${resume.job}">자기소개서 내용</p>
+        </a>
+    </div>
+</div>
+<form method="post" action="/page/newResume">
+    <button type="submit">자기소개서 쓰기</button>
+</form>
+
+<form method="post" action="/page/goMain">
+    <button type="submit">홈으로</button>
+</form>
+
+</body>
+</html>

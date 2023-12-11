@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/gpt.css}"/>
+    <script src="/js/updateTalents.js"></script>
+</head>
+<body>
+<div class="container">
+    <form action="/companyGet" method="get">
+        <label for="email">이메일</label>
+        <input type="email" id="email" name="email">
+
+        <br><br><label for="company">지원 기업</label>
+        <select id="company" name="company" onchange="updateTalents(allCompanies)">
+            <option th:each="company : ${companies}"
+                    th:value="${company.C_id}"
+                    th:text="${company.C_name}">
+                기업 이름
+            </option>
+        </select>
+
+        <br><br><label for="job">직무</label>
+        <input type="text" id="job" name="job">
+
+        <br><br><label for="talent">인재상</label>
+        <select id="talent" name="talent">
+            <!-- 인재상 옵션은 JavaScript를 통해 동적으로 채워집니다 -->
+        </select>
+
+        <br><br><label for="question">질문 내용</label>
+        <textarea id="question" name="question"></textarea>
+
+        <br><br><input type="submit" value="자기소개서 만들기">
+    </form>
+</div>
+
+<script th:inline="javascript">
+    /*<![CDATA[*/
+    var allCompanies = [[${companies}]];
+    /*]]>*/
+</script>
+</body>
+</html>
