@@ -1,6 +1,6 @@
 package mysql.ex.mysqljpa.service;
 
-import mysql.ex.mysqljpa.domain.company;
+import mysql.ex.mysqljpa.domain.article;
 import mysql.ex.mysqljpa.repository.CompanyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,7 +16,7 @@ public class CompanyService {
         this.companyRepository = companyRepository;
     }
 
-    public List<company> getAllCompanies() {
+    public List<article> getAllCompanies() {
         return companyRepository.findAll();
     }
 }

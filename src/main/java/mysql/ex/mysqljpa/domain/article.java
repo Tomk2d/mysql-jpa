@@ -11,7 +11,7 @@ import lombok.Setter;
 @Entity
 @Getter
 @Setter
-public class company {
+public class article {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
